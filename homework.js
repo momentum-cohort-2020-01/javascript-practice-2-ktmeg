@@ -2,21 +2,64 @@
 // member of the array, and returns a new array with that member removed.
 // For example, `remove(['Cadence', 'Ordel', 'Marion'], 'Marion')` results
 // in `['Cadence', 'Ordel']`.
+function remove(arr, item) {
+    while (arr.includes(item)) {
+        arr.splice(arr.indexOf(item), 1) ;
+    }
+    return arr
+}
+
+
 //
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
 
+
 // 2. Revisit your "remove" function. Make sure that it does not change the original
 // array but instead returns a new array.
+function remove(arr, item) {
+    let arrCopy = arr.slice()
+    while (arrCopy.includes(item)) {
+        arrCopy.splice(arrCopy.indexOf(item), 1) ;
+    }
+    return arrCopy
+}
+
 
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
+let numbers = [ 1, 2, 3, 4];
+function sum(numbers){
+    let sum = 0
+for (let number of numbers){
+    sum += number
+}
+return sum
+}
+
 
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
+function average(arr){
+    if(arr.length == 0){
+     return undefined;   
+    }
+   return  sum(arr) / arr.length
+}
 
+console.log(average([]))
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
+function minimum(arr){
+    if(arr.length == 0){
+        return undefined;  
+    }
+return Math.min(...arr)
+}
+
+
+
+
 
 // 6. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
@@ -41,7 +84,15 @@
 // Note 2: Selection sort can be implemented using one array. Read the explanation at
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
-
+function selectionSort(arr){
+    let arrC = arr.slice()
+    for(i=0; i < arrC.length; i++)
+    {
+       m = minimum(arrC.slice(i))
+       remove (arrC, m)
+       arrC.unshift(m)
+    }
+}
 // 7. Create a function called `textList` that takes an array and joins its elements
 // into a string separated by commas.
 //
