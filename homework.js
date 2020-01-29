@@ -58,9 +58,6 @@ return Math.min(...arr)
 }
 
 
-
-
-
 // 6. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
 // implement sorting ourselves, however.
@@ -84,17 +81,48 @@ return Math.min(...arr)
 // Note 2: Selection sort can be implemented using one array. Read the explanation at
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
-function selectionSort(arr){
-    let arrC = arr.slice()
-    for(i=0; i < arrC.length; i++)
-    {
-       m = minimum(arrC.slice(i))
-       remove (arrC, m)
-       arrC.unshift(m)
-    }
-}
+
+
+// function selectionSort(arr){
+//     if (arrC == []){
+//         return undefined
+//     }
+//     let arrC = arr.slice()
+//     for(i=0; i < arrC.length; i++)
+//     {
+//        let end = arrC.splice(i);
+//        let m = minimum(end)
+//        let j = end.indexOf(m)
+//        end.splice(j, 1)
+     
+//        end.unshift(m)
+//        for(let k of end){
+//            arrC.push(k)
+//        }
+//     }
+// return arrC
+// }
+
+
 // 7. Create a function called `textList` that takes an array and joins its elements
 // into a string separated by commas.
 //
 // For example, `textList(['Cadence', 'Ordel', 'Marion'])` results in the string
 // `"Cadence,Ordel,Marion"`.
+
+
+//  function textList(arr){
+//      if (array1 =[]){
+//          return undefined
+//      }
+// for(let items of array1){
+// console.log (array1.tostring)
+
+//  }
+// }
+// function textList(arr){
+//     if(arr.length == 0){
+//         return undefined;  
+//     }
+// return Array.toString(arr)
+// }
